@@ -1,4 +1,4 @@
-package Practice;
+package Arrays;
 
 public class Car {
     String brand;

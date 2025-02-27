@@ -1,6 +1,4 @@
-package Practice;
-
-import java.util.Arrays;
+package Arrays;
 
 public class twoDimensionalArray {
 

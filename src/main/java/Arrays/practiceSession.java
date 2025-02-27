@@ -1,6 +1,6 @@
-package Practice;
+package Arrays;
 
-public class Arrays {
+public class practiceSession {
 
     public static void main (String[] args){
         int [] A = new int[5];

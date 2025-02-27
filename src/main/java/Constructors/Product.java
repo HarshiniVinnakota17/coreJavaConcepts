@@ -1,39 +1,30 @@
 package Constructors;
 
 public class Product {
-    private int productId;
-    private String productName;
-    public double price;
-    public int quantity;
+    private  int productId;
+    private String name;
+    private double price;
+    private int stock;
 
-    public Product(int productId, String productName, double price, int quantity){
-        this. productId = productId;
-        this.productName = productName;
-        this.price = price;
-        this.quantity = quantity;
+    public Product(int productId, String name, double price, int stock){
+        this.productId=productId;
+        this.name=name;
+        this.price=price;
+        this.stock=stock;
     }
-    public void calculateTotalCost(){
-        double totalcost = (int) (price*quantity);
-        System.out.println(totalcost);
+    public void purchase(int quantity){
+        if (stock<quantity){
+            System.out.println("Not enough stock available - " + quantity + " " + name);
+        }else{
+            stock -=quantity;
+            System.out.println("Please collect the stock at front desk - " + quantity + " " + name);
+        }
     }
-//    public double calculateTotalCost(){
-//        return price*quantity;
-//    }
-    public void updateQuantity(int newQuantity) {
-        quantity = newQuantity;
-        System.out.println("Updated quantity is: " + quantity);
-        if(newQuantity<=0){
-            System.out.println("Invalid quantity");
-        }else
-            System.out.println("Valid quantity.");
-
+    public  void restock(int quantity){
+        stock +=quantity;
+        System.out.println("Stock is available - " + stock + " " + name);
     }
-    public static void main(String[] args){
-        Product p1 = new Product(123, "coffee", 50.0, 20);
-        p1.calculateTotalCost();
-//        double totalcost = p1.calculateTotalCost();
-//        System.out.println(totalcost);
-        p1.updateQuantity(40);
-        p1.updateQuantity(-10);
+    public String getProductDetails(){
+        return "Name: " + name + " ProductId: " + productId + " Price: " + price + " Available Stock: " + stock;
     }
 }
