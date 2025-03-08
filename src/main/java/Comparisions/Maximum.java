@@ -2,7 +2,6 @@ package Comparisions;
 
 import java.util.Scanner;
 
-import static jdk.nashorn.internal.objects.NativeMath.max;
 
 
 public class Maximum {
